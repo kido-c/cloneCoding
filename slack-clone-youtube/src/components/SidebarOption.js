@@ -1,11 +1,13 @@
 import React from 'react'
 import styled from 'styled-components'
-import {db} from '../firebase'
+import { db } from '../firebase'
+import { useDispatch } from "react-redux"
+import { enterRoom } from "../features/counter/appSlice"
 
 
 function  SidebarOption({ Icon, title, addChannelOption, id }) {
     
-
+     const dispatch = useDispatch()
 
     // firebase에 데이터를 추가하는 함수 
     const addChannel = () => {
@@ -17,8 +19,14 @@ function  SidebarOption({ Icon, title, addChannelOption, id }) {
             })
         }
     } 
-
-    const selectChannel = () => {}
+    // redux로 state를 클릭한 채널의 id로 바꿈
+    const selectChannel = () => {
+        if(id) {
+            dispatch(enterRoom({
+                roomId: id
+            }))
+        }
+    }
 
     return (
         <SidebarOptionContainer

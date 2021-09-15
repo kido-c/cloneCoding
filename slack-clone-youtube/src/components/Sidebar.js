@@ -22,6 +22,7 @@ function Sidebar() {
 
     const [channels, loading, error] = useCollection(db.collection("rooms"))
 
+    console.log("채널:", channels)
     return (
         <SidebarContainer>
             <SidebarHeader>
