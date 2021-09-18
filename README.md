@@ -1,3 +1,3 @@
-# cloneCoding
+# 클론 코딩
 
-## this is the sub-project
+## 목적 : 클론 코딩을 베이스로 하여 확장하고 싶은 기능 추가하기.
